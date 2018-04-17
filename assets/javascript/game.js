@@ -1,29 +1,31 @@
-//Start game,
-    //wins equal 0,
-    //losses equal 0,
-    //guesses left equal 10,
-    //guesses made is an empty array,
-    //1. random letter is choosen from array,
-        //2. random letter is hidden,
-    //3. type a letter for a guess,
-        //4. if its right,
-            //5. you win!
-            //6. increment wins,
-            //7. game restarts,
-                //picks new random letter,
-                //8. clears guesses made array,
-                //9. changes guesses left to 10,
-        //10. if its wrong,
-            //11. deincrement the guesses left
-            //12. push wrong letter to guesses made array,
-                //13. if guesses left hits greater then 0,
-                    //14. guess again,
-                    //15. else if guess left equals 0,
-                        //16. you lose,
-                        //17. incremant losses.
-                        //18. restart game
-                            //19. clears guesses made array,
-                            //20. changes guesses left to 10,
+// Start game,
+    // wins equal 0,
+    // losses equal 0,
+    // guesses left equal 10,
+    // guesses made is an empty array,
+    // random letter is choosen from array,
+        // random letter is hidden,
+    // type a letter for a guess,
+        // if you've already guessed the letter "already guessed, try again"
+        // if its not in the array "Not a letter, guess again"
+        // if its right,
+            // you win!
+            // increment wins,
+            // game restarts,
+                // picks new random letter,
+                // clears guesses made array,
+                // changes guesses left to 10,
+        // if its wrong,
+            // deincrement the guesses left
+            // push wrong letter to guesses made array,
+                // if guesses left hits greater then 0,
+                    // guess again,
+                    // else if guess left equals 0,
+                        // you lose,
+                        // incremant losses.
+                        // restart game
+                            // clears guesses made array,
+                            // changes guesses left to 10,
 
 var wins = 0;
 var losses = 0;
@@ -39,22 +41,31 @@ function myKeyPress(e){
     var keynum;
     if(window.event) { // IE                    
       keynum = e.keyCode;
-    } else if(e.which){ // Netscape/Firefox/Opera                   
+    } else if (e.which){ // Netscape/Firefox/Opera                   
       keynum = e.which;
     }
-     //4. if its right,
-    if(randomLetter === String.fromCharCode(keynum)){
-         //5. you win!
-        alert("You Win!");
-        wins = wins + 1;
-        console.log("Your wins: " + wins);
-
-    } else {
-        //10. if its wrong,
-        alert("wrong letter");
-        guessesLeft = guessesLeft - 1;
-        console.log("Your guesses left: " + guessesLeft);
-        guessesMade.push(String.fromCharCode(keynum));
-        console.log(guessesMade);
+    //4. if its right,
+    if (letter.includes(String.fromCharCode(keynum)) === false){
+        console.log("Not a letter, guess again");
+    } else if (guessesMade.includes(String.fromCharCode(keynum)) === true) {    
+        console.log("already guessed, try again")
+    } else if (randomLetter === String.fromCharCode(keynum)){
+            //5. you win!
+            alert("You Win!");
+            console.log("You Win!")
+            wins = wins + 1;
+            console.log("Your wins: " + wins);
+  
+        } else {
+            //10. if its wrong,
+            alert("wrong letter");
+            guessesLeft = guessesLeft - 1;
+            console.log("Your guesses left: " + guessesLeft);
+            if (guessesLeft === 0){
+                console.log("You've no guesses left. You lose");
+            } else {
+                guessesMade.push(String.fromCharCode(keynum));
+                console.log(guessesMade);
+        }
     }
 }
