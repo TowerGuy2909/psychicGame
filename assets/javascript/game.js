@@ -20,13 +20,25 @@
                             //19. clears guesses made array,
                             //20. changes guesses left to 10,
 
+//1. random letter is choosen from an array.                           
 var letter = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
 var randomLetter = letter[Math.floor(Math.random()* letter.length)];
-
+//2. not printing it out keeps it hidden.
 console.log(randomLetter);
-
-// function myFunction() {
-//     let x = document.getElementById("fname");
-//     x.value = x.value.toUpperCase();
-// }
+//3. type a letter for a guess,
+function myKeyPress(e){
+    var keynum;
+    if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+     //4. if its right,
+    if(randomLetter === String.fromCharCode(keynum)){
+         //5. you win!
+        alert("your pressed the random letter");
+    } else {
+        //10. if its wrong,
+        alert("wrong letter");
+    }
+}
