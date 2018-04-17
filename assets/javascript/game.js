@@ -10,6 +10,7 @@
             //5. you win!
             //6. increment wins,
             //7. game restarts,
+                //picks new random letter,
                 //8. clears guesses made array,
                 //9. changes guesses left to 10,
         //10. if its wrong,
@@ -53,5 +54,7 @@ function myKeyPress(e){
         alert("wrong letter");
         guessesLeft = guessesLeft - 1;
         console.log("Your guesses left: " + guessesLeft);
+        guessesMade.push(String.fromCharCode(keynum));
+        console.log(guessesMade);
     }
 }
