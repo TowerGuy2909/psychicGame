@@ -2,17 +2,25 @@
     font-size: 60px;
     color: red;
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
 }
 .subHeader {
     font-size: 25px;
     text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 p {
     text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 div {
     text-align: center;
+    margin-bottom: 20px;
 }
 form {
     text-align: center;
+    margin-bottom: 20px;  
 }
