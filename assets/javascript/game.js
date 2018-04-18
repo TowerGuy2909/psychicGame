@@ -1,6 +1,6 @@
 // Start game,
     // total wins equal 0,
-    // total losses equal 0,
+    // total loses equal 0,
     // guesses left equal 10,
     // guesses made so far starts as an empty array and where wrong guesses are pushed,
     // random letter is choosen from array,
@@ -23,8 +23,8 @@
                     // guess again,
                 // else if guess left equals 0,
                     // you lose,
-                    // incremant losses.
-                    // prints out losses on index.html
+                    // incremant loses.
+                    // prints out loses on index.html
                     // restart game
                         // picks new random letter,
                         // clears guesses made array,
@@ -34,7 +34,7 @@
 
 // total wins,
 var wins = 0;
-// total losses,
+// total loses,
 var loses = 0;
 // guesses left,
 var guessesLeft = 10;
