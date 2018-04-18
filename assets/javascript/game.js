@@ -35,7 +35,7 @@
 // total wins,
 var wins = 0;
 // total losses,
-var losses = 0;
+var loses = 0;
 // guesses left,
 var guessesLeft = 10;
 // guesses made so far starts as an empty array and where wrong guesses are pushed,
@@ -56,9 +56,11 @@ function myKeyPress(e){
     // if its not in the array "Not a letter, guess again"
     if (letter.includes(String.fromCharCode(keynum)) === false){
         console.log("Not a letter, guess again");
+        alert("Not a letter, guess again");
     // if you've already guessed the letter "already guessed, try again"   
     } else if (guessesSoFar.includes(String.fromCharCode(keynum)) === true) {    
         console.log("already guessed, try again")
+        alert("already guessed, try again");
     // if its right,    
     } else if (randomLetter === String.fromCharCode(keynum)){
         // you win!
@@ -83,11 +85,11 @@ function myKeyPress(e){
         guessesLeft = guessesLeft - 1;
         console.log("Your guesses left: " + guessesLeft);
         // prints out guessesLeft on index.html
-        document.getElementById("guessesLeft").innerHTML = loses;
+        document.getElementById("guessesLeft").innerHTML = guessesLeft;
         // else if guess left equals 0,
         if (guessesLeft === 0){
             // you lose,
-            losses = losses + 1;
+            loses = loses + 1;
             console.log("You've no guesses left. You lose");
             // prints out loses on index.html
             document.getElementById("loses").innerHTML = loses;
