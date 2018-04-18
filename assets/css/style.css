@@ -24,3 +24,12 @@ form {
     text-align: center;
     margin-bottom: 20px;  
 }
+/* body {
+    background: url('../images/crystalBall.jpg') ;
+} */
+.gameContainer{
+    background-color: aquamarine;
+    padding: 20px;
+    margin-top: 50px;
+    width: 200px;
+}
