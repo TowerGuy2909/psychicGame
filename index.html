@@ -7,15 +7,17 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
+    <div class="gameContainer">
   <h1 class="header">The Psychic Game!</h1>
-  <h3 class="subHeader">Guess what letter im thinking of?</h3>
+  <h3 class="subHeader">Guess what letter I'm thinking of?</h3>
   <p>Wins:</p><div id="wins">0</div>
   <p>Loses:</p><div id="loses">0</div>
   <p>Guesses left:</p><div id="guessesLeft">10</div>
   <p>Your guesses so far:</p><div id="guessesSoFar"></div>
   <form>
-    <input type="text" onkeypress="return myKeyPress(event)" />
+    <input type="text" onkeypress="return myKeyPress(event)" onkeypress="myFunction()" id="empty"/>
   </form>
+</div>
   <script src="assets/javascript/game.js"></script>
   </body>
 </html>
